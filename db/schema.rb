@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20180916225028) do
 
-  create_table "repositories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "repositories", force: :cascade do |t|
     t.string   "name"
     t.string   "github_url"
     t.string   "language"
-    t.text     "description",    limit: 65535
+    t.text     "description"
     t.string   "site_url"
     t.integer  "stars_count"
     t.integer  "watchers_count"
     t.integer  "forks_count"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["language"], name: "index_repositories_on_language", using: :btree
   end
 
