@@ -34,7 +34,7 @@ class RepositoryCrawler
         existing_repositoty.take
                            .update_attributes(description: repository[:description],
                                               github_url: repository[:html_url],
-                                              language: repository[:language],
+                                              language: repository[:language].downcase,
                                               site_url: repository[:homepage],
                                               stars_count: repository[:stargazers_count],
                                               watchers_count: repository[:watchers_count],
