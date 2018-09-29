@@ -19,27 +19,16 @@ class RepositoryCrawler
   end
 
   def create_repositories
+    Repository.delete_all
     search_repositories.each do |repository|
-      existing_repositoty = Repository.where(name: repository[:full_name])
-      if existing_repositoty.empty?
-        Repository.create(name: repository[:full_name],
-                          description: repository[:description],
-                          github_url: repository[:html_url],
-                          language: repository[:language],
-                          site_url: repository[:homepage],
-                          stars_count: repository[:stargazers_count],
-                          watchers_count: repository[:watchers_count],
-                          forks_count: repository[:forks_count])
-      else
-        existing_repositoty.take
-                           .update_attributes(description: repository[:description],
-                                              github_url: repository[:html_url],
-                                              language: repository[:language].downcase,
-                                              site_url: repository[:homepage],
-                                              stars_count: repository[:stargazers_count],
-                                              watchers_count: repository[:watchers_count],
-                                              forks_count: repository[:forks_count])
-      end
+      Repository.create(name: repository[:full_name],
+                        description: repository[:description],
+                        github_url: repository[:html_url],
+                        language: repository[:language].downcase,
+                        site_url: repository[:homepage],
+                        stars_count: repository[:stargazers_count],
+                        watchers_count: repository[:watchers_count],
+                        forks_count: repository[:forks_count])
     end
   end
 end
