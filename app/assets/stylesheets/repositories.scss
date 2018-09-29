@@ -1,3 +1,27 @@
-// Place all the styles related to the repositories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.repository__row {
+  display: flex;
+  height: 100px;
+  border: 1px solid #1113;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  background: #fff
+}
+
+.repository__fields {
+  padding-right: 100px;
+  padding-left: 10px;
+}
+
+.repository__description {
+  position: absolute;
+  margin-top: 40px;
+  max-width: 700px;
+}
+
+.repository_list {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}

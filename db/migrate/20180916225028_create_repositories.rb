@@ -4,7 +4,7 @@ class CreateRepositories < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :github_url
       t.string :language
-      t.string :description
+      t.text :description
       t.string :site_url
       t.integer :stars_count
       t.integer :watchers_count

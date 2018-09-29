@@ -1,0 +1,22 @@
+<div>
+  <div class="header gradient">
+    <%= image_tag 'github2.svg', class: 'icon' %>
+    <div class="header__title">Repository Crawler</div>
+  </div>
+
+  <div class="searcher">
+    <%= button_to "Search Repositories", search_repositories_path, method: 'get', class: 'form-button', data: { disable_with: "Please wait..." }%>
+
+
+    <%= form_tag(repositories_path, id: 'search-form', class: 'search_form', method: 'get', remote: true) do%>
+
+      <%= select_tag(:language, options_for_select([['All', 'all'], ['Ruby', 'ruby'],['Python', 'python'],['Go', 'go'],['Crystal', 'crystal'], ['Elixir', 'elixir']], params[:language]), class: 'form-filter', id: 'form-filter')%>
+
+    <%end%>
+  </div>
+
+  <div class="repository_list" id="js--repository-list">
+    <%= render 'list'%>
+  </div>
+
+</div>

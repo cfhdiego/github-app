@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+$font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+body {
+  background: #f4f4f4;
+  font-family: $font-family;
+}
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+}
+
+.header__title {
+  font-size: 80px;
+  margin-left: 20px;
+  color: #fff;
+}
+
+.gradient {
+  background: #e96443;
+  background: -webkit-linear-gradient(to right, #904e95, #e96443);
+  background: linear-gradient(to right, #904e95, #e96443);
+}
+
+.icon {
+  width: 160px;
+  height: 160px;
+}
+
+.searcher {
+  margin-top: 30px;
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.simple-form {
+  margin-top: 20px;
+  display: flex;
+}
+
+.simple-form__input {
+  width: 400px;
+}
+
+.simple-form__btn {
+  margin-left: 10px;
+}
+
+.repository-list {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-filter {
+  height: 25px;
+  font-size: 15px;
+  width: 100px;
+  float: left
+}
+
+.form-button {
+  height: 50px;
+  font-size: 16px;
+  width: 150px;
+  float: right;
+}
+
+

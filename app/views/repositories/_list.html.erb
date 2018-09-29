@@ -1,0 +1,20 @@
+<div>
+    <%@repositories.each do |repository|%>
+      <div class='repository__row'>
+        <%= octicon "repo", :height => 18%>
+        <div class='repository__fields'><%= link_to repository.name, repository.github_url%></div>
+
+        <div class='repository__fields'><%= repository.language%></div>
+
+        <%= octicon "repo-forked", :height => 18, :"aria-label" => "fork" %>
+        <div class='repository__fields' ><%= repository.forks_count%></div>
+
+        <%= octicon "star", :height => 18, :"aria-label" => "fork" %>
+        <div class='repository__fields' ><%= repository.stars_count%></div>
+
+        <div class='repository__description'><%= EmojiParser.detokenize(repository.description)%></div>
+      </div>
+    <%end%>
+
+    <%= paginate @repositories, remote: true %>
+</div>
