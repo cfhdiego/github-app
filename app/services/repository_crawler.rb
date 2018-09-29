@@ -7,7 +7,7 @@ class RepositoryCrawler
   end
 
   def search_repositories
-    client = Octokit::Client.new(access_token: '293d7fd606f700752e276c84a68a6d223107efc2')
+    client = Octokit::Client.new(access_token: '34b8a422c2a933e101c377186d079ed55a8e0d37')
     repositories = []
     languages.each do |language|
       repositories << client.search_repositories("language:#{language}",
