@@ -15,6 +15,7 @@
         <div class='repository__description'><%= EmojiParser.detokenize(repository.description)%></div>
       </div>
     <%end%>
-
-    <%= paginate @repositories, remote: true %>
+    <div class="paginate">
+        <%= paginate @repositories, remote: true %>
+    </div>
 </div>
